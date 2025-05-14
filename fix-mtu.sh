@@ -10,7 +10,7 @@ fi
 if [ "$MTU" -eq 1492 ]; then
   echo "MTU for ppp0 is $MTU, changing to 1500"
   sed -i 's/ 1492/ 1500/g' /etc/ppp/peers/ppp0
-  ip link set dev ${IFACE} mtu 1508
+  ip link set dev ${IFACE} mtu 1512
   ip link set dev ${IFACE}.${VLAN} mtu 1508
   ifconfig ${IFACE} down
   ifconfig ${IFACE} up
